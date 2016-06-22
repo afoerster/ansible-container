@@ -10,5 +10,6 @@ ansible-container:
   volumes:
     {% if env.DOCKER_CERT_PATH %}- $DOCKER_CERT_PATH:/docker-certs/{% endif %}
     - {{ base_path }}:/ansible-container/
+    - /var/run/docker.sock:/var/run/docker.sock
   working_dir: /ansible-container/ansible/
 {{ config }}
